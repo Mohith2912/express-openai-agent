@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple browser interface for the NVIDIA NIM Agent API demo."
+    />
+    <title>Hello Agent</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Hello Agent home">
+          <span class="brand-mark" aria-hidden="true">H</span>
+          <span>
+            <strong>Hello Agent</strong>
+            <small>NVIDIA NIM API demo</small>
+          </span>
+        </a>
+
+        <div class="service-status" id="service-status" aria-live="polite">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="status-text">Checking API</span>
+        </div>
+      </header>
+
+      <section class="workspace" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">REST API · AI AGENT · NVIDIA NIM</p>
+          <h1 id="page-title">Ask something.<br />Get a helpful answer.</h1>
+          <p class="intro-copy">
+            Your message travels through the Express API to an isolated AI agent,
+            then to NVIDIA NIM. The generated answer returns through the same API.
+          </p>
+
+          <div class="flow" aria-label="Application request flow">
+            <span>Browser</span>
+            <span aria-hidden="true">→</span>
+            <span>API</span>
+            <span aria-hidden="true">→</span>
+            <span>Agent</span>
+            <span aria-hidden="true">→</span>
+            <span>NVIDIA</span>
+          </div>
+        </div>
+
+        <section class="chat-card" aria-label="Chat with Hello Agent">
+          <div class="chat-header">
+            <div>
+              <p class="chat-label">Conversation</p>
+              <h2>Hello World Agent</h2>
+            </div>
+            <button class="clear-button" id="clear-button" type="button">Clear</button>
+          </div>
+
+          <div class="messages" id="messages" aria-live="polite" aria-busy="false">
+            <article class="message assistant-message">
+              <div class="avatar" aria-hidden="true">AI</div>
+              <div class="message-content">
+                <span>Hello Agent</span>
+                <p>Hello! Send me a message to test the complete API flow.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="suggestions" aria-label="Example messages">
+            <button type="button" data-prompt="Say hello in three languages">
+              Say hello in three languages
+            </button>
+            <button type="button" data-prompt="Explain what an API is in one sentence">
+              Explain an API simply
+            </button>
+          </div>
+
+          <form class="composer" id="chat-form">
+            <label class="sr-only" for="message-input">Your message</label>
+            <textarea
+              id="message-input"
+              name="message"
+              rows="1"
+              maxlength="2000"
+              placeholder="Type your message…"
+              required
+            ></textarea>
+            <button class="send-button" id="send-button" type="submit">
+              <span>Send</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+
+          <p class="form-hint">Press Ctrl + Enter to send</p>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
