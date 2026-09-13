@@ -1,0 +1,28 @@
+{
+  "name": "openai-agent-demo",
+  "version": "1.0.0",
+  "description": "A simple Express REST API demonstrating an isolated AI agent powered by NVIDIA NIM through the OpenAI SDK.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "check": "node --check src/server.js && node --check src/config/openai.js && node --check src/routes/chat.js && node --check src/agents/helloAgent.js && node --check public/script.js"
+  },
+  "keywords": [
+    "openai",
+    "express",
+    "rest-api",
+    "ai-agent"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "openai": "^7.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
